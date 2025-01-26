@@ -1,5 +1,7 @@
 package com.medilla.FamilyRoots.Service;
 
+import com.medilla.FamilyRoots.DTO.UserDTO;
+import com.medilla.FamilyRoots.Entity.User;
 import com.medilla.FamilyRoots.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,9 +11,9 @@ public class UserService {
 
     @Autowired
     UserRepository userRepository;
-    public String getUser(Integer id){
+    public UserDTO getUser(Integer id){
 
-        String user =  userRepository.getUser(id);
-        return user;
+        UserDTO userDTO = new UserDTO();
+        return  userDTO.UserMapper(userRepository.getUser(id));
     }
 }

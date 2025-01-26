@@ -22,8 +22,15 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 	implementation("org.springframework.data:spring-data-jpa:3.4.1")
+
+	// "@Entity" will not exist without this dependency
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa:3.4.1")
+
+	testImplementation("com.h2database:h2:2.2.224")
+
 }
 
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
+
