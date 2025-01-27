@@ -11,6 +11,6 @@ public class UserRepository {
 
     public User getUser(Integer id){
 
-        return new User(1,"firstName", "hello", "world", new Timestamp (System.currentTimeMillis()));
+        return new User(id,"firstName", "hello", "world", new Timestamp (System.currentTimeMillis()));
     }
 }

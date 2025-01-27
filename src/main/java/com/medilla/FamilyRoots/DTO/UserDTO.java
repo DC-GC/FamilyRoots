@@ -8,46 +8,38 @@ import java.sql.Timestamp;
 
 public class UserDTO {
 
-    String Name;
-    String Username;
-    String Password;
-    Timestamp CreatedOn;
+    String name;
+    String userName;
+    String password;
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public void setUsername(String username) {
-        Username = username;
+        this.userName = username;
     }
 
-    public void setPassword(String password) { Password = password; }
+    public void setPassword(String password) { this.password = password; }
 
-    public void setCreatedOn(Timestamp createdOn) {
-        CreatedOn = createdOn;
-    }
 
     public UserDTO UserMapper(User user) {
         this.setName(user.getName());
         this.setUsername(user.getUsername());
         this.setPassword(user.getPassword());
-        this.setCreatedOn(user.getCreatedOn());
         return this;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
-    public String getUsername() {
-        return Username;
+    public String getUserName() {
+        return userName;
     }
 
     public String getPassword() {
-        return Password;
+        return password;
     }
 
-    public Timestamp getCreatedOn() {
-        return CreatedOn;
-    }
 }
